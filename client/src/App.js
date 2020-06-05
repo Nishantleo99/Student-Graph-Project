@@ -1,7 +1,14 @@
+/*
+Author: Nishant Kumar
+Description: This is the main react file, the form through which the data goes to the server is present here. The class names 
+             of the form is related to the bootstrap used. The bootstrap used is taken from "https://getbootstrap.com/docs/4.0/getting-started/introduction/",
+             and is used in index.html under the public folder.
+Note: A proxy has been defined in package.json to resolve cors policy.             
+*/
+
 import React, {Component} from 'react';
 import axios from 'axios';
 //import {Chart} from 'primereact/chart';
-import {Bar} from 'react-chartjs-2';
 import BarChartComponent from './components/BarChartComponent';
 import './App.css';
 
@@ -77,81 +84,80 @@ class App extends React.Component {
     });
   };
 
-  /*displayBlogPost = (posts) => {
-    if (!posts.length) return null;
-
-    return posts.map((post, index) => (
-      <div key={index}>
-        <h3>{post.name}</h3>
-        <p>
-          {post.chemistry}
-        </p>
-      </div>
-    ));
-  };*/
-
   render() {
 
   console.log('State: ',this.state);
    return(
-     <div className="app" align="center">
-       <h2><center><i>Marks Bar Graph</i></center></h2>
+     <div className="col-md-6 mt-5 mx-auto">
+       <h1 className="h3 mb-3 font-weight-normal">Please Enter the Details</h1>
        <form onSubmit={this.submit}>
-         <div className="form-input">
-         <label><i>Name:</i></label>
+         <div className="form-group">
+         <label htmlFor="name">Name:</label>
            <input
            type="text"
+           className="form-control"
            name="name"
+           placeholder="Enter Name"
            deafultValue={this.state.name}
            onChange={this.handleChange}
            />
           </div>
-          <div className="form-input"> 
-           <label><i>Physics:</i></label>
+          <div className="form-group"> 
+           <label htmlFor="physics">Physics:</label>
            <input
            type="text"
+           className="form-control"
            name="physics"
+           placeholder="Enter Marks"
            defaultValue={this.state.physics}
            onChange={this.handleChange}
            />
          </div>
-         <div className="form-input">
-           <label><i>Chemistry:</i></label>
+         <div className="form-group">
+           <label htmlFor="chemistry">Chemistry:</label>
            <input
            type="text"
+           className="form-control"
            name="chemistry"
+           placeholder="Enter Marks"
            defaultValue={this.state.chemistry}
            onChange={this.handleChange}
            />
          </div>
-         <div className="form-input">
-           <label><i>Mathematics:</i></label>
+         <div className="form-group">
+           <label htmlFor="maths">Mathematics:</label>
          <input
            type="text"
+           className="form-control"
            name="maths"
+           placeholder="Enter Marks"
            defaultValue={this.state.maths}
            onChange={this.handleChange}
            />
          </div>
-         <div className="form-input">
-           <label><i>Biology:</i></label>
+         <div className="form-group">
+           <label htmlFor="biology">Biology:</label>
            <input
            type="text"
+           className="form-control"
            name="biology"
+           placeholder="Enter Marks"
            defaultValue={this.state.biology}
            onChange={this.handleChange}
            />
          </div>
-         <div className="form-input">
-           <label><i>English:</i></label>
+         <div className="form-group">
+           <label htmlFor="english">English:</label>
            <input
            type="text"
+           className="form-control"
            name="english"
+           placeholder="Enter Marks"
            defaultValue={this.state.english}
            onChange={this.handleChange}
            />
          </div>
-         <button>Submit</button>
+         <button type="submit" className="btn btn-lg btn-primary btn-block">Submit</button>
        </form>
        <div className="blog-">
          {this.state.posts.map(post => {

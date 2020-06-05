@@ -1,3 +1,9 @@
+/*
+Author: Nishant Kumar
+Description: In this file, a bar chart has been created using the chart.js library for react : "react-chartjs-2". The data is 
+             being fetched using axios. The bar chart is interactive. It is then exported to App.js file to display it.
+*/
+
 import React, { Component } from 'react';
 import {Bar} from 'react-chartjs-2';
 import axios from 'axios';

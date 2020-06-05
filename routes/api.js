@@ -1,3 +1,8 @@
+/*
+Author: Nishant Kumar
+Description: This file is used to define the routes where the data is stored. The model has been imported from "blogpost.js".
+*/
+
 const express = require('express');
 
 const router = express.Router();
@@ -34,6 +39,7 @@ router.post('/save', (req, res) => {
     });
 });
 
+// Sample data
 router.get('/name', (req,res) => {
     const data = {
         username: 'Peter',
